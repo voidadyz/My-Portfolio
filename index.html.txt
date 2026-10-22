@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adil - Portfolio & Designer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1>Hello, I'm Adil</h1>
+            <p>Digital Marketer & Graphic Designer</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="container">
+        <h2>About Me</h2>
+        <p>I am a passionate Digital Marketing Specialist and Graphic Designer. I help brands build their visual identity, create engaging social media content, and grow their online presence with creative strategies.</p>
+    </section>
+
+    <!-- Skills / Services Section -->
+    <section class="container">
+        <h2>My Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-box">Graphic Design</div>
+            <div class="skill-box">Digital Marketing</div>
+            <div class="skill-box">Social Media Management</div>
+            <div class="skill-box">Brand Strategy</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <p>Let's work together or discuss your next project!</p>
+        <p><strong>Email:</strong> your-email@gmail.com</p>
+        <p><strong>Phone:</strong> +91 XXXXXXXXXX</p>
+        <a href="mailto:your-email@gmail.com" class="btn">Send an Email</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Adil. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
