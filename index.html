@@ -3,49 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adil - Portfolio & Designer</title>
+    <title>Adil - Digital Marketing Specialist & Graphic Designer</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <div class="header-content">
-            <h1>Hello, I'm Adil</h1>
-            <p>Digital Marketer & Graphic Designer</p>
-            <a href="#contact" class="btn">Get in Touch</a>
-        </div>
-    </header>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">ADIL<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
 
-    <!-- About Section -->
-    <section class="container">
-        <h2>About Me</h2>
-        <p>I am a passionate Digital Marketing Specialist and Graphic Designer. I help brands build their visual identity, create engaging social media content, and grow their online presence with creative strategies.</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h3>Hello, I'm</h3>
+            <h1>ADIL</h1>
+            <p class="subtitle">Digital Marketing Specialist & Graphic Designer</p>
+            <h2>Grow Your Business with Smart Digital Strategies</h2>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Enquiry</a>
+                <a href="#services" class="btn btn-secondary">Services</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="profile.jpg" alt="Adil">
+        </div>
     </section>
 
-    <!-- Skills / Services Section -->
-    <section class="container">
-        <h2>My Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-box">Graphic Design</div>
-            <div class="skill-box">Digital Marketing</div>
-            <div class="skill-box">Social Media Management</div>
-            <div class="skill-box">Brand Strategy</div>
+    <!-- Wave Divider -->
+    <div class="wave-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0d1b2a" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,112C672,107,768,149,864,165.3C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    </div>
+
+    <!-- About Me Section -->
+    <section id="about" class="section about-section">
+        <h2 class="section-title">ABOUT ME</h2>
+        <div class="about-container">
+            <div class="about-card">
+                <p>I am a passionate Digital Marketing Specialist and Graphic Designer based in Kerala. I help brands build their visual identity, create engaging social media content, and achieve measurable business growth using creative strategies and targeted marketing campaigns.</p>
+                <a href="#contact" class="btn btn-primary">More About Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <h2 class="section-title">MY SERVICES</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>SEO & SMM</h3>
+                <p>Search Engine Optimization & Social Media Marketing to boost brand visibility and rank higher on search engines.</p>
+            </div>
+            <div class="service-card">
+                <h3>Graphic Design</h3>
+                <p>Creating stunning visual assets, logos, brand guidelines, and promotional marketing creatives.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Development</h3>
+                <p>Building responsive, fast, and modern portfolio and e-commerce websites customized for your business.</p>
+            </div>
+            <div class="service-card">
+                <h3>Brand Strategy</h3>
+                <p>Developing data-driven online campaigns to reach targeted audiences and maximize ROI.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stat-box">
+            <h3>20+</h3>
+            <p>Projects Completed</p>
+        </div>
+        <div class="stat-box">
+            <h3>23+</h3>
+            <p>Happy Clients</p>
+        </div>
+        <div class="stat-box">
+            <h3>96%</h3>
+            <p>Positive Feedback</p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container">
-        <h2>Contact Me</h2>
-        <p>Let's work together or discuss your next project!</p>
-        <p><strong>Email:</strong> your-email@gmail.com</p>
-        <p><strong>Phone:</strong> +91 XXXXXXXXXX</p>
-        <a href="mailto:your-email@gmail.com" class="btn">Send an Email</a>
+    <section id="contact" class="section contact-section">
+        <h2 class="section-title">CONTACT ME</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Your Phone" required>
+                <textarea placeholder="Discuss your next project..." rows="4" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Adil. All Rights Reserved.</p>
+        <p>© 2026 ADIL. All Rights Reserved.</p>
     </footer>
 
 </body>
