@@ -1,47 +1,427 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adyz - Digital Marketer & Graphic Designer</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adhil | Digital Marketer & Graphic Designer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #020908;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 60% 60%, #05251c 0%, #020908 65%);
+    }
+
+    header {
+      width: 94%;
+      max-width: 1720px;
+      min-height: 110px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 48px;
+      font-weight: 800;
+      border: 3px solid white;
+      padding: 4px 12px;
+      letter-spacing: -5px;
+      transition: .3s;
+    }
+    .logo:hover { color: #20e477; border-color: #20e477; }
+
+    nav { display: flex; align-items: center; gap: 35px; }
+    nav a {
+      font-size: 17px;
+      position: relative;
+      padding: 10px 0;
+      transition: .3s;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 3px;
+      width: 0;
+      height: 2px;
+      background: #20e477;
+      transition: .3s;
+    }
+    nav a:hover { color: #20e477; }
+    nav a:hover::after { width: 100%; }
+
+    .menu-toggle {
+      display: none;
+      padding: 10px 13px;
+      color: white;
+      background: #10221b;
+      border: 1px solid #20e477;
+      border-radius: 5px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .hero-content {
+      width: 94%;
+      max-width: 1720px;
+      min-height: calc(100vh - 110px);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 35px 0 100px;
+    }
+
+    .intro {
+      position: relative;
+      z-index: 3;
+      width: 65%;
+      animation: appear 1s ease both;
+    }
+
+    .eyebrow {
+      color: #20e477;
+      font-size: 13px;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      color: #18c765;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(40px, 5.5vw, 88px);
+      line-height: 1.12;
+      overflow-wrap: anywhere;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      font-size: clamp(13px, 1.3vw, 19px);
+      line-height: 1.8;
+      margin-top: 17px;
+    }
+
+    .description {
+      color: #bfcac5;
+      max-width: 560px;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-top: 14px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      min-width: 145px;
+      padding: 15px 22px;
+      border: 1px solid #18c765;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: .3s;
+    }
+    .btn-primary { background: #18c765; color: #021008; }
+    .btn-secondary { background: transparent; color: white; }
+    .btn:hover {
+      background: #20e477;
+      color: #020908;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px #18c76540;
+    }
+
+    .portrait {
+      position: absolute;
+      right: 3%;
+      bottom: 0;
+      width: 43%;
+      height: 85%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(1) brightness(.65) contrast(1.15);
+      -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .socials {
+      position: fixed;
+      right: 0;
+      top: 39%;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 12px 0 0 12px;
+    }
+
+    .socials a {
+      width: 65px;
+      height: 65px;
+      display: grid;
+      place-items: center;
+      font-size: 27px;
+      transition: .3s;
+    }
+    .socials a:hover {
+      width: 85px;
+      transform: translateX(-5px);
+      filter: brightness(1.2);
+    }
+    .linkedin { background: #087bb5; }
+    .instagram { background: linear-gradient(135deg,#8145d9,#f33b5d,#ffad45); }
+    .whatsapp { background: #18bd50; }
+
+    section.content-section {
+      min-height: 40vh;
+      padding: 90px 7%;
+      background: #06110e;
+      border-top: 1px solid #ffffff10;
+    }
+    .content-section:nth-child(even) { background: #030908; }
+    .content-section h2 {
+      color: #18c765;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(27px, 4vw, 45px);
+      margin-bottom: 20px;
+    }
+    .content-section p { color: #c6cfcb; line-height: 1.8; }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      header { min-height: 85px; }
+      .logo { font-size: 35px; }
+      .menu-toggle { display: block; }
+      nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        padding: 15px 20px;
+        background: #03100df5;
+        border: 1px solid #ffffff20;
+        border-radius: 10px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+      }
+      nav.open { display: flex; }
+      nav a { font-size: 14px; }
+      .hero-content {
+        min-height: calc(100vh - 85px);
+        padding: 60px 0 110px;
+      }
+      .intro { width: 100%; }
+      h1 { font-size: clamp(35px, 9vw, 65px); }
+      .subtitle { max-width: 470px; font-size: 12px; }
+      .description { max-width: 450px; font-size: 13px; }
+      .portrait {
+        width: 75%;
+        height: 65%;
+        right: -18%;
+        opacity: .35;
+      }
+      .socials {
+        top: auto;
+        bottom: 15px;
+        right: 5%;
+        flex-direction: row;
+        border-radius: 10px;
+      }
+      .socials a { width: 46px; height: 46px; font-size: 20px; }
+      .socials a:hover { width: 52px; }
+    }
+
+    @media (max-width: 400px) {
+      h1 { font-size: 32px; }
+      .btn { min-width: 125px; padding: 13px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <section class="hero" id="home">
+    <header>
+      <!-- Change YM to your own logo or upload a logo image -->
+      <a href="#home" class="logo">YM</a>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">Adyz<span>.</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-        </ul>
-    </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h3>Hello, I'm</h3>
-            <h1>Adhil Rahman</h1>
-            <p class="subtitle">Digital Marketer & Graphic Designer</p>
-            <h2>Grow Your Business with Smart Digital Strategies</h2>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Enquiry</a>
-                <a href="#services" class="btn btn-secondary">Services</a>
-            </div>
+      <nav id="mainNav">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#certificate">CERTIFICATE</a>
+        <a href="#services">SERVICES</a>
+        <a href="#portfolio">PORTFOLIO</a>
+        <a href="#posts">POSTS</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </header>
+
+    <div class="hero-content">
+      <div class="intro">
+        <p class="eyebrow">Creative ideas. Measurable growth.</p>
+
+        <!-- Change your name here -->
+        <h1>ADHIL</h1>
+
+        <p class="subtitle">
+          DIGITAL MARKETER &amp; GRAPHIC DESIGNER | KERALA | INDIA
+        </p>
+
+        <p class="description">
+          Helping businesses grow online through digital marketing,
+          creative graphic design, SEO and result-focused strategies.
+        </p>
+
+        <div class="buttons">
+          <!-- Replace with your WhatsApp number including country code -->
+          <a class="btn btn-primary"
+             href="https://wa.me/91XXXXXXXXXX"
+             target="_blank" rel="noopener noreferrer">
+            ENQUIRY <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <a class="btn btn-secondary" href="#services">
+            SERVICES <i class="fa-solid fa-arrow-down"></i>
+          </a>
         </div>
-        <div class="hero-image">
-            <img src="profile.jpg" alt="Adil">
-        </div>
-    </section>
+      </div>
 
-    <!-- Wave Divider -->
-    <div class="wave-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0d1b2a" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,112C672,107,768,149,864,165.3C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+      <!-- Replace this image URL with your own portrait -->
+      <img class="portrait"
+           src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=90"
+           alt="Digital marketing professional">
     </div>
+
+    <!-- Replace the example URLs with your actual profile links -->
+    <div class="socials">
+      <a class="linkedin"
+         href="https://www.linkedin.com/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+
+      <a class="instagram"
+         href="https://www.instagram.com/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a class="whatsapp"
+         href="https://wa.me/91XXXXXXXXXX"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+  </section>
+
+  <section class="content-section" id="about">
+    <h2>ABOUT ME</h2>
+    <p>Add your professional introduction and experience here.</p>
+  </section>
+
+  <section class="content-section" id="certificate">
+    <h2>CERTIFICATES</h2>
+    <p>Add your certificates and qualifications here.</p>
+  </section>
+
+  <section class="content-section" id="services">
+    <h2>MY SERVICES</h2>
+    <p>SEO · Social Media Management · Meta Ads · Google Ads ·
+       Content Marketing · Graphic Design · Website Development</p>
+  </section>
+
+  <section class="content-section" id="portfolio">
+    <h2>PORTFOLIO</h2>
+    <p>Add your client projects, posters and campaign results here.</p>
+  </section>
+
+  <section class="content-section" id="posts">
+    <h2>POSTS</h2>
+    <p>Add your latest posts, articles and marketing tips here.</p>
+  </section>
+
+  <section class="content-section" id="contact">
+    <h2>CONTACT</h2>
+    <p>Contact me to discuss your next project.</p>
+  </section>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Close menu' : 'Open menu'
+      );
+
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+  </script>
+</body>
+</html>
+
 
     <!-- About Me Section -->
     <section id="about" class="section about-section">
