@@ -15,7 +15,7 @@
 
   <!-- ============ HEADER ============ -->
   <a href="#home" class="logo">
-  <img src="images/logo.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+  <img src="images/logo.png" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='logo.png'}else{this.style.display='none';this.nextElementSibling.style.display='block'}" />
   <span class="logo-text">AR</span>
 </a>
 
@@ -41,7 +41,7 @@
       <p class="hero-sub">Digital Marketer & Graphic Designert | Kerala | India</p>
 
       <div class="hero-image">
-  <img src="images/hero.png" alt="" onerror="this.style.display='none'" />
+  <img src="images/hero.png" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='hero.png'}else{this.style.display='none'}" />
 </div>
         <!-- CHANGE: Enquiry link (e.g. "#contact" or "mailto:you@email.com") -->
         <a href="#contact" class="btn btn-primary">Enquiry <i class="fa-solid fa-arrow-right"></i></a>
